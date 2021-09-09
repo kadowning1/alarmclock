@@ -1,3 +1,18 @@
-.buttons {
+html {
     background-color: aqua;
+    text-align: center;
+}
+.buttons {
+  background-color: darkred; 
+  border: dotted;
+  color: white;
+  padding: 16px;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+}
+.dt {
+    font-size: larger;
+    color: black;
+    text-align: center;
 }
