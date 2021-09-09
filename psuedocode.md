@@ -8,7 +8,6 @@ Create variables to show each
 AM/PM
 
 Pick a time for it to go off:
-7:38pm
 
 Update without refreshing the page
 
