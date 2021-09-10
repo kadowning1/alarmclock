@@ -13,18 +13,16 @@
     
       <div>
         <h1>Alarm Clock Project</h1>
-        <div id="time">
-          <h2>Working on Alarm</h2>
-            <p>Current Time</p>
-          <button class="buttons" type="button" onclick="startCountdown()">Start Alarm</button>
+        <div id="time" onload="myFunction()"></div>
+          <h2>Current Time</h2>
+            <p>Options</p>
+          <button class="buttons" type="button" onclick="setCountdown()">Set Alarm</button>
           <button class="buttons" type="button" onclick="clearCountdown()">Clear Alarm</button>
           <button class="buttons" type="button" onclick="snoozeAlarm()">Snooze</button>
-        </div>
+        
       </div>
     
-    <script>
-      src = "js/main.js"
-
+    <script src="js/main.js">
     </script>
   </body>
 

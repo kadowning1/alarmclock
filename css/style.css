@@ -4,8 +4,8 @@ html {
 }
 
 .buttons {
-  background-color: darkred;
-  border: dotted;
+  background-color: maroon;
+  border: none;
   color: white;
   padding: 16px;
   text-align: center;
@@ -14,8 +14,9 @@ html {
   cursor: pointer;
 }
 
-.dt {
+#time {
   font-size: larger;
-  color: black;
+  background-color: maroon;
+  color: white;
   text-align: center;
 }
