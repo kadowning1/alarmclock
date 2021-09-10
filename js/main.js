@@ -14,10 +14,6 @@ function myFunction() { /*function to produce current time*/
     min = changeTime(min);
     sec = changeTime(sec);
     ampm = dayNight(ampm);
-
-    var digitalClock = hour + " : " + min + " : " + sec + " : " + ampm
-
-    document.getElementById("time").innerHTML = digitalClock; /* adding to the html div.  this part took me the longest to figure out */
   }
 
   function changeTime(i) {
@@ -38,6 +34,9 @@ function myFunction() { /*function to produce current time*/
       return "AM"
     }
   }
+  var digitalClock = hour + " : " + min + " : " + sec + " : " + ampm
+
+    document.getElementById("time").innerHTML = digitalClock; /* adding to the html div.  this part took me the longest to figure out */
 
 }
 
