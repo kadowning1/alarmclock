@@ -41,9 +41,9 @@ function myFunction() { /*function to produce current time*/
 }
 
 function setAlarm() { /*this is the function holding me back*/
-  let hour = 07
-  let min = 38
-  let sec = 00
+  let hour = "07"
+  let min = "38"
+  let sec = "00"
   let ampm = "PM"
   let digitalClock = (hour + min + sec + ampm)
   console.log(digitalClock);

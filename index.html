@@ -15,6 +15,11 @@
         <h1>Alarm Clock Project</h1>
         <div id="time" onload="myFunction()"></div>
           <h2>Current Time</h2>
+          <label for="meeting-time">Alarm Time</label>
+
+    <input type="datetime-local" id="meeting-time"
+       name="meeting-time" value="2021-09-10T19:30"
+       min="2018-06-07T00:00" max="2100-06-14T00:00">
             <p>Options</p>
           <button id="setButtons" class="buttons" type="button" onclick="setAlarm();">Set Alarm</button>
           <button id="clearButtons" class="buttons" type="button" onclick="clearAlarm();">Clear Alarm</button>
