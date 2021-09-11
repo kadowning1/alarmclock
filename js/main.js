@@ -1,6 +1,10 @@
+var alarmSet = null; /*setting variables to zero*/
+var alarmOut = null;
+
 setInterval(myFunction, 1000); /*function to make clock not refresh and update*/
 
-function myFunction() { /*function to produce current time*/
+function myFunction() {
+  /*function to produce current time*/
   {
     var currentDate = new Date(); /* creating the date*/
 
@@ -34,35 +38,48 @@ function myFunction() { /*function to produce current time*/
       return "AM"
     }
   }
-  var digitalClock = hour + " : " + min + " : " + sec + " : " + ampm
 
-    document.getElementById("time").innerHTML = digitalClock; /* adding to the html div.  this part took me the longest to figure out */
+  var digitalClock = hour + " : " + min + " : " + sec + ampm
+
+  document.getElementById("time").innerHTML = digitalClock; /* adding to the html div.  this part took me the longest to figure out */
 
 }
 
-function setAlarm() { /*this is the function holding me back*/
-  let hour = "07"
-  let min = "38"
-  let sec = "00"
-  let ampm = "PM"
-  let digitalClock = (hour + min + sec + ampm)
-  console.log(digitalClock);
+myFunction(); /*calling the function*/
 
-  if (digitalClock === digitalClock) /*looking for something along these lines but need some sort of variable to set alarm*/
-    alert("Wake up!");
-  else
-    alert("Keep Sleeping");
+
+function setAlarmOff(value) { /*function for user to input time through html*/
+  alarmSet = value;
+}
+function wakeUp(){ /*function to go off after time is zero in setAlarm function*/
+    alert('Loud Noises');
+}
+function setAlarm() { /*function to set alarm by pulling the Date and comparing the two variables*/
+  if (alarmSet) {
+    var currentTime = new Date;
+    var timeToAlarm = new Date(alarmSet);
+  };
+
+  if (timeToAlarm > currentTime) {
+    var timeOut = timeToAlarm.getTime() - currentTime.getTime();
+    console.log(timeOut);
+    alarmOut = setTimeout(wakeUp, timeOut);
+    alert("Alarm set!");
+  }
+
 }
 
-function clearAlarm() { /*function to clear out time after setAlarm function is complete*/
-  clearInterval(setAlarm, 500);
-  alert("Alarm Cleared");
+function clearAlarm() {
+  /*function to clear out time after setAlarm function is complete*/
+  if (alarmOut) {
+    clearTimeout(alarmOut);
+    alert("Alarm Cleared");
+  }
 }
 
-function snoozeAlarm() { /*wanted to add 5 minutes snooze but failed at other function so didnt get to it */
+function snoozeAlarm() {
+  /*wanted to add 5 minutes snooze but failed at other function so didnt get to it */
   alert("No, Just Wake Up!");
 }
 
 
-setTimeout(myFunction, 3000);
-myFunction(); /*calling the function*/
