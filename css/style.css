@@ -14,10 +14,21 @@ html {
   cursor: pointer;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 #time {
+  font-family: 'Anton', sans-serif;
   font-size: 50px;
+  width: 66%;
+  margin: auto;
   background-color: maroon;
+  border-radius: 10px;
   color: white;
   text-align: center;
   padding: 16px;
+}
+
+#pass {
+    height: 33%;
+    width: 33%;
 }

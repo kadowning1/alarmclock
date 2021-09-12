@@ -7,17 +7,13 @@ function myFunction() {
   /*function to produce current time*/
   {
     var currentDate = new Date(); /* creating the date*/
-
     var hour = currentDate.getHours(); /*uses local time according to MDN*/
     var min = currentDate.getMinutes();
     var sec = currentDate.getSeconds();
-    var ampm = "";
-
 
     hour = changeTime(hour);
     min = changeTime(min);
     sec = changeTime(sec);
-    ampm = dayNight(ampm);
   }
 
   function changeTime(i) {
@@ -27,59 +23,49 @@ function myFunction() {
     } else {
       return i
     }
-
   }
-
-  function dayNight(hour) {
-    /*attempting to add am/pm*/
-    if (hour < 12) {
-      return "PM";
-    } else {
-      return "AM"
-    }
-  }
-
-  var digitalClock = hour + " : " + min + " : " + sec + ampm
+  var digitalClock = hour + " : " + min + " : " + sec
 
   document.getElementById("time").innerHTML = digitalClock; /* adding to the html div.  this part took me the longest to figure out */
-
 }
 
 myFunction(); /*calling the function*/
 
+function setAlarmOff(value) {
+  /*function for user to input time through html*/
+  alarmSet = value; /*set to value which user picks*/
+}
 
-function setAlarmOff(value) { /*function for user to input time through html*/
-  alarmSet = value;
+function wakeUp() {
+  /*function to go off after time is zero in setAlarm function*/
+  alert('Loud Noises'); /*placed before setAlarm function to have it aler if current time to Alarm is equal to current time*/
 }
-function wakeUp(){ /*function to go off after time is zero in setAlarm function*/
-    alert('Loud Noises');
-}
-function setAlarm() { /*function to set alarm by pulling the Date and comparing the two variables*/
-  if (alarmSet) {
-    var currentTime = new Date;
-    var timeToAlarm = new Date(alarmSet);
+
+function setAlarm() {
+  /*function to set alarm by pulling the Date and comparing the two variables*/
+  if (alarmSet) { //if alarm has been set
+    var currentTime = new Date; //establish variables for current time
+    var timeToAlarm = new Date(alarmSet); //establish variable for alarm
   };
 
-  if (timeToAlarm > currentTime) {
-    var timeOut = timeToAlarm.getTime() - currentTime.getTime();
-    console.log(timeOut);
-    alarmOut = setTimeout(wakeUp, timeOut);
-    alert("Alarm set!");
+  if (timeToAlarm > currentTime) { //if the alarm is set and greater than current Time
+    var timeOut = timeToAlarm.getTime() - currentTime.getTime(); //subtract the two times to get the alarm length
+    console.log(timeOut); //checking timeOut variable 
+    alarmOut = setTimeout(wakeUp, timeOut); //function to alert when time is achieved
+    alert("Alarm set!"); //alert when alarm set
   }
 
 }
 
 function clearAlarm() {
-  /*function to clear out time after setAlarm function is complete*/
-  if (alarmOut) {
-    clearTimeout(alarmOut);
-    alert("Alarm Cleared");
+  /*function to clear out time if alarm is not needed*/
+  if (alarmOut) { //if there alarmOut has happened
+    clearTimeout(alarmOut); //clear the timeout
+    alert("Alarm Cleared"); //alert
   }
 }
 
 function snoozeAlarm() {
   /*wanted to add 5 minutes snooze but failed at other function so didnt get to it */
-  alert("No, Just Wake Up!");
+  alert("No, Just Wake Up!"); //alert
 }
-
-

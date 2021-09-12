@@ -10,22 +10,23 @@
   </head>
 
   <body>
-    
-      <div>
-        <h1>Alarm Clock Project</h1>
-        <div id="time" onload="myFunction()"></div>
-          <h2>Current Time</h2>
-          <label for="meeting-time">Alarm Time</label>
 
-    <input type="datetime-local" id="setAlarm" onchange="setAlarmOff(this.value)">
-            <p>Options</p>
-          <button id="setButtons" class="buttons" type="button" onclick="setAlarm()">Set Alarm</button>
-          <button id="clearButtons" class="buttons" type="button" onclick="clearAlarm()">Clear Alarm</button>
-          <button id="snoozeButtons" class="buttons" type="button" onclick="snoozeAlarm()">Snooze</button>
-        
+    <div>
+      <h1>Alarm Clock Project</h1>
+      <div id="time" onload="myFunction()"></div>
+      <h2>Current Time</h2>
+
+      <div>
+        <input type="datetime-local" id="setAlarm" onchange="setAlarmOff(this.value)">
       </div>
-      <br>
-    <img src="img/fail-stamp-square-grungy-red-260nw-1726293580.jpeg" alt="I failed">
+      <p><b>Options</b></p>
+      <button id="setButtons" class="buttons" type="button" onclick="setAlarm()">Set Alarm</button>
+      <button id="clearButtons" class="buttons" type="button" onclick="clearAlarm()">Clear Alarm</button>
+      <button id="snoozeButtons" class="buttons" type="button" onclick="snoozeAlarm()">Snooze</button>
+
+    </div>
+    <br>
+    <img src="img/succeeding.png" alt="I passed" id="pass">
     <script src="js/main.js">
     </script>
   </body>
